@@ -165,5 +165,10 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 sudo defaults write com.apple.dock wvous-br-corner -int 5
 sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -int 0
 sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist ThirdPartyDataSubmit -int 0
+sudo defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+sudo defaults write com.apple.safari SendDoNotTrackHTTPHeader -int 1
+sudo systemsetup -setremoteappleevents off >/dev/null 2>/dev/null
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off >/dev/null 2>/dev/null
 
+DAEMONS=()
 
