@@ -16,6 +16,9 @@ brew update
 brew upgrade --all
 brew bundle
 
+brew services start koekeishiya/formulae/skhd
+brew services start koekeishiya/formulae/yabai
+
 open -a Paste
 open -a Firefox\ Nightly
 open -a The\ Unarchiver
