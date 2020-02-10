@@ -3,6 +3,7 @@ COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 gpgconf --launch gpg-agent
 
+export HOME='/Users/gabehoban'
 export TERM="xterm-256color"
 export EDITOR='nano'
 export GPG_TTY="$(tty)"
@@ -12,8 +13,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 ## Plugins
 source ~/.zsh/antigen.zsh
-THEME=denysdovhan/spaceship-prompt 
-antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 antigen bundle git
 antigen bundle heroku
 antigen bundle pip
@@ -55,6 +54,9 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias ls="ls"
-alias nano='/usr/local/Cellar/nano/4.7/bin/nano --smooth --tabstospaces --linenumbers'
+alias nano='/usr/local/Cellar/nano/4.7/bin/nano -M --tabstospaces'
 alias dots='cd ~/.dotfiles && git add -A && git commit -m "update dotfiles" && git push origin master'
-clear
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship

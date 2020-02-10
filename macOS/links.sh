@@ -10,3 +10,4 @@ ln -sv ~/.dotfiles/git/.gitconfig ~
 ln -sv ~/.dotfiles/.yabairc ~
 ln -sv ~/.dotfiles/.zsh ~
 ln -sv ~/.dotfiles/.zsh/.zshrc ~
+ln -sv ~/.dotfiles/firefox/user.js ~/Library/Application\ Support/Firefox/Profiles/*.default-nightly/

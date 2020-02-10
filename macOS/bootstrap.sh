@@ -16,14 +16,13 @@ brew update
 brew upgrade --all
 brew bundle
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 open -a Paste
 open -a Firefox\ Nightly
-open -a iTerm
 open -a The\ Unarchiver
 open -a Dropbox
 open -a Dozer
 
 ## Symlink dotfiles
 $(pwd)/links.sh
+npm install -g spaceship-prompt
+open -a iTerm
