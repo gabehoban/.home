@@ -14,9 +14,9 @@ yabai -m config status_bar_clock_icon        
 # ====== Variables =============================
 
 gaps_top="17"
-gaps_bottom="54"
-gaps_left="17"
-gaps_right="17"
+gaps_bottom="20"
+gaps_left="15"
+gaps_right="15"
 gaps_inner="16"
 
 normal_border_color="010101"
@@ -62,4 +62,5 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add label="macfeh" app="^macfeh$" manage=off
 yabai -m rule --add label="The Unarchiver" app="^The Unarchiver$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
-
+yabai -m rule --add app="Latest" manage=off
+yabai -m rule --add app="Parallels Desktop" manage=off
