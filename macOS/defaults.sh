@@ -132,3 +132,7 @@ sudo systemsetup -setrestartfreeze on
 sudo systemsetup -settimezone "America/Detriot" > /dev/null
 sudo systemsetup -setusingnetworktime on 
 sudo touch /private/var/vm/sleepimage && sudo chflags uchg /private/var/vm/sleepimage
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/.dotfiles/macOS/wallpaper.jpg"'
+sudo killall Finder
+sudo killall Dock
+
