@@ -24,7 +24,7 @@ open -a Firefox\ Nightly
 open -a The\ Unarchiver
 open -a Dropbox
 open -a Dozer
-
+bash nerd-fonts/install.sh
 ## Symlink dotfiles
 $(pwd)/links.sh
 npm install -g spaceship-prompt

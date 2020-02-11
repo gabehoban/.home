@@ -8,7 +8,7 @@ export TERM="xterm-256color"
 export EDITOR='nano'
 export GPG_TTY="$(tty)"
 export HOMEBREW_TEMP=/usr/local/temp
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/Users/gabehoban/.bin:$PATH"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 ## Plugins
@@ -60,3 +60,4 @@ alias dots='cd ~/.dotfiles && git add -A && git commit -m "update dotfiles" && g
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
+clear; lastlogin; ufetch-macos; todo
