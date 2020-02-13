@@ -1,5 +1,5 @@
 [PY-TODO]
-color = False
-detail_mode = False
+color = True
+detail_mode = True
 week_start_day = Sun
 

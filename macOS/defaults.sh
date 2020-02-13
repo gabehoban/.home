@@ -7,13 +7,11 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on - disab
 sudo bash appleProof.sh
 sudo chflags nohidden ~/Library
 sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write -g 'InitialKeyRepeat_Level_Saved' -int 10
 sudo defaults write .GlobalPreferences com.apple.mouse.scaling -1
 sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -int 0
 sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist ThirdPartyDataSubmit -int 0
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
-sudo defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool false
 sudo defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool false
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool YES
@@ -25,6 +23,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "lil-baymax"
 sudo defaults write ~/Library/Preferences/com.apple.assistant.support.plist "Assistant Enabled" -int 0; killall -TERM Siri
 sudo defaults write ~/Library/Preferences/com.apple.Terminal SecureKeyboardEntry -bool true
+sudo defaults write com.apple.menuextra.battery ShowPercent YES
 sudo defaults write com.apple.ActivityMonitor IconType -int 5
 sudo defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 sudo defaults write com.apple.ActivityMonitor ShowCategory -int 0
@@ -44,7 +43,6 @@ sudo defaults write com.apple.dock expose-animation-duration -float 0.1
 sudo defaults write com.apple.dock expose-group-by-app -bool false
 sudo defaults write com.apple.dock launchanim -bool false
 sudo defaults write com.apple.dock mru-spaces -bool false
-sudo defaults write com.apple.dock persistent-apps -array
 sudo defaults write com.apple.dock wvous-br-corner -int 5
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
