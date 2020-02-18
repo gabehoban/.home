@@ -1,0 +1,40 @@
+# - Set up Dropbox app
+# - Set up 1Password
+#    - Use vault from Dropbox
+#    - Install 1Password extension for Chrome, Firefox, and Safari
+#
+################################################################################
+################################################################################
+#
+# Manual Mac system settings follow-up tasks:
+# - Add new public key to github.com
+#   - $ pbcopy < ~/.ssh/id_rsa.pub
+#
+# - Organise the Finder favourites bar in the following order:
+#   - Macintosh HD
+#   - Airdrop
+#   - gabehoban <Home>
+#   - Dropbox
+#   - Applications
+#   - Desktop
+#   - Documents
+#   - Downloads
+#
+# - Organise the OSX dock to have the following apps in it (and set them up
+#    appropriately):
+#    - Finder
+#    - Launchpad
+#    - Mail
+#    - iTerm2
+#    - Brave
+#    - Spotify
+#    - TrainerRoad
+#    - Visual Code Studio
+#    - Settings
+#
+# - Under System Preferences
+#    - Under User & Groups > Login Items, set the following list:
+#      - Dropbox, Alfred 2, Divvy, Karabiner, Flux, Google Drive
+#    - Under Security and Privacy
+#      - Privacy -> Accessibility
+#        - Dropbox, iTerm, MTMR, Paste, skhd, yabai
