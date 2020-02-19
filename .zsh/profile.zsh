@@ -6,6 +6,8 @@ export LC_ALL="en_US.UTF-8"
 export MANPAGER="less -X";
 export GREP_OPTIONS="--color=auto";
 export LESS_TERMCAP_md="${yellow}";
+export GOPATH=~/go
+export GOBIN=~/go/bin
 
 ## History Settings
 export HISTTIMEFORMAT="%c"
@@ -14,6 +16,8 @@ HISTFILE=~/.zhistory
 setopt sharehistory
 setopt histappend
 setopt hist_ignore_space
+setopt longlistjobs
+setopt hist_verify
 
 ## ZSH Settings
 COMPLETION_WAITING_DOTS="true"
