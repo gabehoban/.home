@@ -1,5 +1,10 @@
 [user]
 	email = ghoban14@gmail.com
 	name = Gabe Hoban
+	signingkey = 31CF14544585614A
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
 [core]
 	excludesfile = /Users/gabehoban/.gitignore_global
