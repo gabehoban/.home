@@ -5,6 +5,14 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg2
+	program = gpg
 [core]
 	excludesfile = /Users/gabehoban/.gitignore_global
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+  	default = current
+[rebase]
+  	autosquash = true
