@@ -1,7 +1,7 @@
 [user]
 	email = ghoban14@gmail.com
 	name = Gabe Hoban
-	signingkey = 31CF14544585614A
+	signingkey = 0x31CF14544585614A
 [commit]
 	gpgsign = true
 [gpg]

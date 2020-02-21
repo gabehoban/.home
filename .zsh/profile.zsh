@@ -42,6 +42,7 @@ export PATH
 . "$HOME"/.zsh/vault.zsh
 
 ## GPG Exports
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 export KEYID=0x31CF14544585614A
