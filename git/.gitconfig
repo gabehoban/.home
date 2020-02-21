@@ -16,3 +16,5 @@
   	default = current
 [rebase]
   	autosquash = true
+[alias]
+	yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
