@@ -5,8 +5,7 @@ alias ls="ls -AGe"
 alias cat="bat "
 alias study='open -na "Brave Browser Nightly" --args --incognito "https://youtube.com/watch?v=MCkTebktHVc"'
 alias dots='cd "$HOME"/.dotfiles &&\
-            git add -A &&\
-            git commit -m "update dotfiles" &&\
+            git yolo &&\
             git push origin master &&\
             cd -;'
 alias pip="pip3"
