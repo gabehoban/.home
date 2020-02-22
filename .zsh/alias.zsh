@@ -9,6 +9,6 @@ alias dots='cd "$HOME"/.dotfiles &&\
             git add -A &&\
             git commit -m "commit all the things" &&\
             git push origin master &&\
-            echo "Dotfiles Updated"'
+            echo "$(cat -p ~/.bin/updots)"'
 
 alias pip="pip3"
