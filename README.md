@@ -1,3 +1,3 @@
 # My macOS dotfiles
 
-`git clone https://github.com/gabehoban/.dotfiles ~`
+'bash -c "$(curl -fsSL https://raw.githubusercontent.com/gabehoban/.dotfiles/master/macOS/bootstrap.sh)"'
