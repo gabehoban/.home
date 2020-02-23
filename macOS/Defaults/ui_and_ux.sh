@@ -5,7 +5,7 @@
 print_in_purple "\n • General UI & UX\n\n"
 
 execute "sudo pmset -a hibernatemode 25 &&\
-	 sudo pmset -a destroyfvkeyonstandby 1" \
+	 sudo pmset -a destroyfvkey onstandby 1" \
     "Evict FileVault keys in standby mode"
 
 execute "sudo pmset -a powernap 0 &&\
@@ -13,6 +13,11 @@ execute "sudo pmset -a powernap 0 &&\
 	 sudo pmset -a standbydelay 0 &&\
 	 sudo pmset -a autopoweroff 0" \
     "Setup system power settings"
+
+execute "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on &&\
+         sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on &&\
+         sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on" \
+    "Setup System Firewall"
 
 execute "sudo rm /private/var/vm/sleepimage" \
     "Remove the sleep image file to save disk space"

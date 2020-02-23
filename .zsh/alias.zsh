@@ -12,6 +12,7 @@ git push origin master &&\
 echo "$(cat -p ~/.bin/updots)"'
 
 alias pip="pip3"
+alias python='python3'
 alias cp='cp -iv'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
