@@ -8,12 +8,14 @@ dgileadi.java-decompiler
 dnicolson.binary-plist
 dnlytras.nord-wave
 dracula-theme.theme-dracula
+dunstontc.vscode-go-syntax
 esbenp.prettier-vscode
 eyhn.vscode-vibrancy
 formulahendry.code-runner
 HookyQR.beautify
 ionutvmi.path-autocomplete
 ithildir.java-properties
+ms-vscode.Go
 Pivotal.vscode-boot-dev-pack
 Pivotal.vscode-concourse
 Pivotal.vscode-manifest-yaml
