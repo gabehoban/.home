@@ -27,6 +27,40 @@ function packageManagers {
 }
 
 # -----------------------------------------------------------------------------
+# Install npm packages
+# -----------------------------------------------------------------------------
+function node {
+  echo "Installing Node Packages"
+  mkdir -p ~/.npm-global
+  npm install -g n
+  n latest
+
+  apps=$(cat "~/.dotfiles/node/npm.txt")
+  for app in $apps; do
+    which $app > /dev/null
+    if [ $? == 1 ]; then
+      echo "Installing ${app}"
+      npm install -g $app
+    fi
+  done
+}
+# -----------------------------------------------------------------------------
+# Install Ruby Gems
+# -----------------------------------------------------------------------------
+
+function ruby_gems {
+  gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable --rails
+source ~/.rvm/scripts/rvm
+  gems=$(cat "~/.dotfiles/ruby/gems.txt")
+
+  echo 'Installing Ruby gems'
+  for gem in $gems; do
+    gem install $gem
+  done
+}
+
+# -----------------------------------------------------------------------------
 # Install software
 # -----------------------------------------------------------------------------
 
@@ -38,7 +72,6 @@ function software {
   brew bundle --file="~/.dotfiles/macOS/Brew/Caskfile"
   brew services start koekeishiya/formulae/skhd
   brew services start koekeishiya/formulae/yabai
-  npm install -g spaceship-prompt
   rm -f ~/Library/Preferences/com.apple.dock.plist
   ln -sv ~/.dotfiles/macOS/dock ~/Library/Preferences/com.apple.dock.plist
   killall Dock
@@ -113,8 +146,10 @@ function open {
 xcodeCli
 packageManagers
 software
+node
 link
 codeExtensions
+ruby
 defaults
 gpg
 ssh

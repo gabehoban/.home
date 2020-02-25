@@ -33,6 +33,9 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASKS_OPTS=--require-sha
 export HOMEBREW_FORCE_BREWED_GIT=1
+export HOMEBREW=/usr/local
+fpath=("$HOMEBREW/share/zsh-completions" $fpath)
+fpath=("$HOMEBREW/share/zsh/site-functions" $fpath)
 
 ## Path Exports
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"    # Local bin
@@ -42,7 +45,9 @@ export PATH
 
 ## Source dotfile utils
 . "$HOME"/.zsh/vault.zsh
-export BREWFILE="$HOME/.dotfiles/macOS/Brewfile"
+export BREWFILE="$HOME/.dotfiles/macOS/Brew/Brewfile"
+export CASKFILE="$HOME/.dotfiles/macOS/Brew/Caskfile"
+
 ## GPG Exports
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

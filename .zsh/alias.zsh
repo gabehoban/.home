@@ -1,9 +1,11 @@
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
+alias cp='cp -iv'
+alias mkdir='mkdir -pv'
+alias mv="mv -iv"
+alias rm="rmtrash"
 alias ls="ls -AGe"
 alias cat="bat "
 alias study='open -na "Brave Browser Nightly" --args --incognito "https://youtube.com/watch?v=MCkTebktHVc"'
+
 alias dots='cd "$HOME"/.dotfiles &&\
 code-insiders --list-extensions > ~/.dotfiles/code/Codefile &&\
 git add -A &&\
@@ -13,7 +15,3 @@ echo "$(cat -p ~/.bin/updots)"'
 
 alias pip="pip3"
 alias python='python3'
-alias cp='cp -iv'
-alias mkdir='mkdir -pv'
-alias mv='mv -iv'
-
