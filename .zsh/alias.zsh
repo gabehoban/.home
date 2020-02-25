@@ -15,3 +15,4 @@ echo "$(cat -p ~/.bin/updots)"'
 
 alias pip="pip3"
 alias python='python3'
+alias gpgme="gpg -e -r hobang1@udayton.edu"
