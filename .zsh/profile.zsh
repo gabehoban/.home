@@ -45,8 +45,8 @@ export PATH
 
 ## Source dotfile utils
 . "$HOME"/.zsh/vault.zsh
-export BREWFILE="$HOME/.dotfiles/macOS/Brew/Brewfile"
-export CASKFILE="$HOME/.dotfiles/macOS/Brew/Caskfile"
+export BREWFILE="$HOME/.dotfiles/packages/brew/Brewfile"
+export CASKFILE="$HOME/.dotfiles/packages/brew/Caskfile"
 
 ## GPG Exports
 export GPG_TTY="$(tty)"

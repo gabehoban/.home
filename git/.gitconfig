@@ -17,11 +17,13 @@
 	branch = auto
 	ui = true
 [push]
-  	default = current
+	default = current
+	gpgSign = true
 [rebase]
   	autosquash = true
 [alias]
 	yolo = !git add -A && git commit -m \"$(curl --silent --fail http://whatthecommit.com/index.txt)\"
+	log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -46,3 +48,5 @@
 	whitespace = fix
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[pull]
+	rebase = merge

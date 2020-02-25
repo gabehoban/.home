@@ -1,6 +1,0 @@
-intellisense
-diff-so-fancy
-tldr
-trash-cli
-typescript
-spaceship-prompt

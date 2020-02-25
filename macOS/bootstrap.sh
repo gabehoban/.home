@@ -35,7 +35,7 @@ function node {
   npm install -g n
   n latest
 
-  apps=$(cat "~/.dotfiles/node/npm.txt")
+  apps=$(cat "~/.dotfiles/packages/node/npm.txt")
   for app in $apps; do
     which $app > /dev/null
     if [ $? == 1 ]; then
@@ -52,7 +52,7 @@ function ruby_gems {
   gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
-  gems=$(cat "~/.dotfiles/ruby/gems.txt")
+  gems=$(cat "~/.dotfiles/packages/ruby/gems.txt")
 
   echo 'Installing Ruby gems'
   for gem in $gems; do
@@ -67,9 +67,9 @@ source ~/.rvm/scripts/rvm
 function software {
   echo "Installing software ..."
   cd ~ && git clone https://github.com/gabehoban/.dotfiles
-  brew bundle --file="~/.dotfiles/macOS/Brew/Tapfile"
-  brew bundle --file="~/.dotfiles/macOS/Brew/Brewfile"
-  brew bundle --file="~/.dotfiles/macOS/Brew/Caskfile"
+  brew bundle --file="~/.dotfiles/packages/brew/Tapfile"
+  brew bundle --file="~/.dotfiles/packages/brew/Brewfile"
+  brew bundle --file="~/.dotfiles/packages/brew/Caskfile"
   brew services start koekeishiya/formulae/skhd
   brew services start koekeishiya/formulae/yabai
   rm -f ~/Library/Preferences/com.apple.dock.plist

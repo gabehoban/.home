@@ -1,0 +1,11 @@
+intellisense
+diff-so-fancy
+tldr
+trash-cli
+typescript
+spaceship-prompt
+yaml-language-server
+vscode-css-languageserver-bin
+vscode-html-languageserver-bin
+bash-language-server
+sass
