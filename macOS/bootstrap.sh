@@ -35,7 +35,7 @@ function node {
   npm install -g n
   n latest
 
-  apps=$(cat "~/.dotfiles/packages/node/npm.txt")
+  apps=$(cat "/Users/gabehoban/.dotfiles/packages/node/npm.txt")
   for app in $apps; do
     which $app > /dev/null
     if [ $? == 1 ]; then
@@ -60,8 +60,8 @@ function pip_install {
 
 function ruby_gems {
   gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-\curl -sSL https://get.rvm.io | bash -s stable --rails
-source ~/.rvm/scripts/rvm
+  curl -sSL https://get.rvm.io | bash -s stable --rails
+  source ~/.rvm/scripts/rvm
   gems=$(cat "~/.dotfiles/packages/ruby/gems.txt")
 
   echo 'Installing Ruby gems'
@@ -153,15 +153,20 @@ function open {
 # -----------------------------------------------------------------------------
 # RUN
 # -----------------------------------------------------------------------------
-xcodeCli
-packageManagers
-software
+function runAll(){
+  xcodeCli
+  packageManagers
+  software
+  node
+  link
+  codeExtensions
+  ruby
+  pip_install
+  defaults
+  gpg
+  ssh
+  open
+}
 node
-link
-codeExtensions
-ruby
+ruby_gems
 pip_install
-defaults
-gpg
-ssh
-open
