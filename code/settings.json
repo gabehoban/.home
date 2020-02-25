@@ -18,5 +18,6 @@
     "Tapfile*": "ruby",
     "Caskfile*": "ruby"
   },
-  "window.titleBarStyle": "native"
+  "window.titleBarStyle": "native",
+  "workbench.startupEditor": "newUntitledFile"
 }

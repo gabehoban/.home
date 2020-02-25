@@ -39,3 +39,5 @@
 	prune = true
 [apply]
 	whitespace = fix
+[push]
+	default = tracking

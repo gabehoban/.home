@@ -44,6 +44,16 @@ function node {
     fi
   done
 }
+
+# -----------------------------------------------------------------------------
+# Install Python Packages
+# -----------------------------------------------------------------------------
+
+function pip_install {
+  REQUIREMENTS_FILE=~/.dotfiles/packages/python/requirements.txt
+  pip3 install -r "$REQUIREMENTS_FILE"
+}
+
 # -----------------------------------------------------------------------------
 # Install Ruby Gems
 # -----------------------------------------------------------------------------
@@ -150,6 +160,7 @@ node
 link
 codeExtensions
 ruby
+pip_install
 defaults
 gpg
 ssh
