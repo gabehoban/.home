@@ -1,7 +1,7 @@
 # My macOS dotfiles
 
 
-![TermScreenshot](https://github.com/gabehoban/.dotfiles/assets/term.png "Terminal Screenshot")
+![TermScreenshot](https://raw.githubusercontent.com/gabehoban/.dotfiles/master/assets/term.png "Terminal Screenshot")
 
 
 ```bash
