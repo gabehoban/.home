@@ -41,3 +41,5 @@
 	whitespace = fix
 [push]
 	default = tracking
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
