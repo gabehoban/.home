@@ -47,6 +47,9 @@ export PATH
 . "$HOME"/.zsh/vault.zsh
 export BREWFILE="$HOME/.dotfiles/packages/brew/Brewfile"
 export CASKFILE="$HOME/.dotfiles/packages/brew/Caskfile"
+export MASFILE="$HOME/.dotfiles/packages/brew/Masfile"
+export dots="$HOME/.dotfiles"
+
 
 ## GPG Exports
 export GPG_TTY="$(tty)"

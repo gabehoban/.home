@@ -20,21 +20,9 @@
 #   - Documents
 #   - Downloads
 #
-# - Organise the OSX dock to have the following apps in it (and set them up
-#    appropriately):
-#    - Finder
-#    - Launchpad
-#    - Mail
-#    - iTerm2
-#    - Brave
-#    - Spotify
-#    - TrainerRoad
-#    - Visual Code Studio
-#    - Settings
-#
 # - Under System Preferences
 #    - Under User & Groups > Login Items, set the following list:
-#      - Dropbox, Alfred 2, Divvy, Karabiner, Flux, Google Drive
+#      - Dropbox
 #    - Under Security and Privacy
 #      - Privacy -> Accessibility
 #        - Dropbox, iTerm, MTMR, Paste, skhd, yabai

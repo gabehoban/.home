@@ -4,7 +4,7 @@ brew "automake"
 brew "openssl"
 brew "openssl@1.1"
 brew "gcc"
-brew "xquartz"
+cask "xquartz"
 
 brew 'curl', link: true, force: true
 brew 'git-extras'
