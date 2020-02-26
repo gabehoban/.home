@@ -1,7 +1,7 @@
 
 ## System Exports
 export TERM="xterm-256color"
-export EDITOR='nano'
+export EDITOR='vim'
 export LC_ALL="en_US.UTF-8"
 export MANPAGER="less -X";
 export GREP_OPTIONS="--color=auto";

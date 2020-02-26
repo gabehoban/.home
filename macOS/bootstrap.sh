@@ -80,7 +80,7 @@ function software {
   brew bundle --file="~/.dotfiles/packages/brew/Tapfile"
   brew bundle --file="~/.dotfiles/packages/brew/Brewfile"
   brew bundle --file="~/.dotfiles/packages/brew/Caskfile"
-  brew bundle —-file=“~/.dotfiles/packages/brew/Masfile”
+  brew bundle —-file="~/.dotfiles/packages/brew/Masfile"
 
   brew services start koekeishiya/formulae/skhd
   brew services start koekeishiya/formulae/yabai
@@ -97,15 +97,7 @@ function software {
 
 function codeExtensions {
   echo "Installing Code extensions ..."
-  while read -r extension
-  do
-    if [[ "$extension" =~ \#.+ ]]
-    then
-      echo "Skipping ${extension}"
-    else
-      code-insiders --install-extension "$extension"
-    fi
-  done < "~/.dotfiles/code/Codefile"
+  bash ../code/Codefile
 }
 
 # -----------------------------------------------------------------------------
