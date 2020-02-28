@@ -7,7 +7,7 @@ alias study='open -na "Brave Browser Nightly" --args --incognito "https://youtub
 
 alias dots='cd "$HOME"/.dotfiles &&\
     rm -f ~/.dotfiles/code/Codefile
-    code-insiders --list-extensions | xargs -L 1 echo code --install-extension > ~/.dotfiles/code/Codefile &&\
+    code-insiders --list-extensions | xargs -L 1 echo code-insiders --install-extension > ~/.dotfiles/code/Codefile &&\
         yes | cp -f ~/.vimrc ~/.dotfiles/vim/ &&\
         git add -A &&\
         git commit -m "commit all the things" &&\
