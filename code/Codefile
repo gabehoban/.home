@@ -1,67 +1,67 @@
-aaron-bond.better-comments
-adamhartford.vscode-base64
-adashen.vscode-tomcat
-adrientoub.base64utils
-arcticicestudio.nord-visual-studio-code
-Atishay-Jain.All-Autocomplete
-ban.spellright
-bibhasdn.unique-lines
-christian-kohler.npm-intellisense
-christian-kohler.path-intellisense
-codezombiech.gitignore
-CoenraadS.bracket-pair-colorizer-2
-dbaeumer.vscode-eslint
-dgileadi.java-decompiler
-dnicolson.binary-plist
-dnlytras.nord-wave
-dracula-theme.theme-dracula
-dunstontc.vscode-go-syntax
-eamodio.gitlens
-EditorConfig.EditorConfig
-eg2.vscode-npm-script
-esbenp.prettier-vscode
-eyhn.vscode-vibrancy
-formulahendry.auto-close-tag
-formulahendry.auto-rename-tag
-formulahendry.code-runner
-Gruntfuggly.todo-tree
-HookyQR.beautify
-IBM.output-colorizer
-ionutvmi.path-autocomplete
-ithildir.java-properties
-jasonnutter.search-node-modules
-lacroixdavid1.vscode-format-context-menu
-leizongmin.node-module-intellisense
-Matsuyanagi.vscode-insert-beginning-of-line
-mikestead.dotenv
-ms-vscode.Go
-NathanRidley.autotrim
-Orta.vscode-jest
-Pivotal.vscode-concourse
-Pivotal.vscode-manifest-yaml
-Pivotal.vscode-spring-boot
-PKief.material-icon-theme
-pnp.polacode
-pverest.java-ide-pack
-redhat.java
-shakram02.bash-beautify
-sharat.vscode-brewfile
-shardulm94.trailing-spaces
-speedy37.ascii-plist
-stkb.rewrap
-streetsidesoftware.code-spell-checker
-tomoki1207.pdf
-VisualStudioExptTeam.vscodeintellicode
-vscjava.vscode-java-debug
-vscjava.vscode-java-dependency
-vscjava.vscode-java-pack
-vscjava.vscode-java-test
-vscjava.vscode-maven
-vscjava.vscode-spring-boot-dashboard
-vscjava.vscode-spring-initializr
-WallabyJs.quokka-vscode
-wayou.vscode-todo-highlight
-wix.vscode-import-cost
-YouMayCallMeV.vscode-java-saber
-zhouronghui.propertylist
-znck.grammarly
+code --install-extension aaron-bond.better-comments
+code --install-extension adamhartford.vscode-base64
+code --install-extension adashen.vscode-tomcat
+code --install-extension adrientoub.base64utils
+code --install-extension arcticicestudio.nord-visual-studio-code
+code --install-extension Atishay-Jain.All-Autocomplete
+code --install-extension ban.spellright
+code --install-extension bibhasdn.unique-lines
+code --install-extension christian-kohler.npm-intellisense
+code --install-extension christian-kohler.path-intellisense
+code --install-extension codezombiech.gitignore
+code --install-extension CoenraadS.bracket-pair-colorizer-2
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension dgileadi.java-decompiler
+code --install-extension dnicolson.binary-plist
+code --install-extension dnlytras.nord-wave
+code --install-extension dracula-theme.theme-dracula
+code --install-extension dunstontc.vscode-go-syntax
+code --install-extension eamodio.gitlens
+code --install-extension EditorConfig.EditorConfig
+code --install-extension eg2.vscode-npm-script
+code --install-extension esbenp.prettier-vscode
+code --install-extension eyhn.vscode-vibrancy
+code --install-extension formulahendry.auto-close-tag
+code --install-extension formulahendry.auto-rename-tag
+code --install-extension formulahendry.code-runner
+code --install-extension Gruntfuggly.todo-tree
+code --install-extension HookyQR.beautify
+code --install-extension IBM.output-colorizer
+code --install-extension ionutvmi.path-autocomplete
+code --install-extension ithildir.java-properties
+code --install-extension jasonnutter.search-node-modules
+code --install-extension lacroixdavid1.vscode-format-context-menu
+code --install-extension leizongmin.node-module-intellisense
+code --install-extension Matsuyanagi.vscode-insert-beginning-of-line
+code --install-extension mikestead.dotenv
+code --install-extension ms-vscode.Go
+code --install-extension NathanRidley.autotrim
+code --install-extension Orta.vscode-jest
+code --install-extension Pivotal.vscode-concourse
+code --install-extension Pivotal.vscode-manifest-yaml
+code --install-extension Pivotal.vscode-spring-boot
+code --install-extension PKief.material-icon-theme
+code --install-extension pnp.polacode
+code --install-extension pverest.java-ide-pack
+code --install-extension redhat.java
+code --install-extension shakram02.bash-beautify
+code --install-extension sharat.vscode-brewfile
+code --install-extension shardulm94.trailing-spaces
+code --install-extension speedy37.ascii-plist
+code --install-extension stkb.rewrap
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension tomoki1207.pdf
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+code --install-extension vscjava.vscode-spring-boot-dashboard
+code --install-extension vscjava.vscode-spring-initializr
+code --install-extension WallabyJs.quokka-vscode
+code --install-extension wayou.vscode-todo-highlight
+code --install-extension wix.vscode-import-cost
+code --install-extension YouMayCallMeV.vscode-java-saber
+code --install-extension zhouronghui.propertylist
+code --install-extension znck.grammarly

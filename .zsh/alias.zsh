@@ -6,17 +6,18 @@ alias cat="bat "
 alias study='open -na "Brave Browser Nightly" --args --incognito "https://youtube.com/watch?v=MCkTebktHVc"'
 
 alias dots='cd "$HOME"/.dotfiles &&\
-    code-insiders --list-extensions > ~/.dotfiles/code/Codefile &&\
-    yes | cp -f ~/.vimrc ~/.dotfiles/vim/ &&\
-    git add -A &&\
-    git commit -m "commit all the things" &&\
-    git push origin master &&\
-    echo "$(cat -p ~/.bin/updots)"'
+    rm -f ~/.dotfiles/code/Codefile
+    code-insiders --list-extensions | xargs -L 1 echo code --install-extension > ~/.dotfiles/code/Codefile &&\
+        yes | cp -f ~/.vimrc ~/.dotfiles/vim/ &&\
+        git add -A &&\
+        git commit -m "commit all the things" &&\
+        git push origin master &&\
+        echo "$(cat -p ~/.bin/updots)"'
 
-alias pip="pip3"
-alias python='python3'
-alias gpgme="gpg -e -r hobang1@udayton.edu"
-alias nano="vim"
-alias op='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
-alias v="vim"
-alias status="git status --porcelain"
+    alias pip="pip3"
+    alias python='python3'
+    alias gpgme="gpg -e -r hobang1@udayton.edu"
+    alias nano="vim"
+    alias op='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
+    alias v="vim"
+    alias status="git status --porcelain"
