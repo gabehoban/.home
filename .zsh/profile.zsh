@@ -50,8 +50,11 @@ export BREWFILE="$HOME/.dotfiles/packages/brew/Brewfile"
 export CASKFILE="$HOME/.dotfiles/packages/brew/Caskfile"
 export MASFILE="$HOME/.dotfiles/packages/brew/Masfile"
 export TAPFILE="$HOME/.dotfiles/packages/brew/Tapfile"
+export GEMFILE="$HOME/.dotfiles/packages/ruby/gems.txt"
+export GOFILE="$HOME/.dotfiles/packages/go/packages.txt"
+export NODEFILE="$HOME/.dotfiles/packages/node/npm.txt"
+export PIPFILE="$HOME/.dotfiles/packages/python/requirements.txt"
 export dots="$HOME/.dotfiles"
-
 
 ## GPG Exports
 export GPG_TTY="$(tty)"

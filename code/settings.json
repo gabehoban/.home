@@ -12,14 +12,13 @@
   "files.insertFinalNewline": true,
   "files.autoSave": "onFocusChange",
   "editor.renderWhitespace": "none",
-  "editor.smoothScrolling": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
+  "editor.formatOnSave": true,
   "workbench.enableExperiments": false,
   "editor.tabCompletion": "on",
   "editor.trimAutoWhitespace": true,
   "editor.snippetSuggestions": "top",
-  "editor.formatOnSave": true,
   "workbench.sideBar.location": "left",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -32,10 +31,25 @@
     "Tapfile*": "ruby",
     "Caskfile*": "ruby"
   },
+  "beautify.onSave": true,
   "window.titleBarStyle": "native",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "material-icon-theme",
   "todo-tree.tree.showScanModeButton": false,
-  "todo-tree.highlights.enabled": true
+  "todo-tree.highlights.enabled": true,
+  "cSpell.userWords": [
+    "Hoban",
+    "hobang"
+  ],
+  "trailing-spaces.trimOnSave": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "editor.wrappingIndent": "deepIndent",
+  "rewrap.reformat": true,
+  "boot-java.live-information.automatic-tracking.on": true,
+  "boot-java.scan-java-test-sources.on": true,
+  "java.codeGeneration.generateComments": true,
+  "java.codeGeneration.hashCodeEquals.useInstanceof": true,
+  "java.codeGeneration.toString.skipNullValues": true,
+  "java.codeGeneration.useBlocks": true,
+  "workbench.colorTheme": "DVLPR"
 }

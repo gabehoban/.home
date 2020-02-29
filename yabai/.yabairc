@@ -53,9 +53,9 @@ yabai -m config auto_balance                off
 alt - r : yabai -m space --rotate 90
 
 alt - p : yabai -m window --toggle sticky;\
-          yabai -m window --toggle topmost;\
-          yabai -m window --toggle border;\
-          yabai -m window --toggle pip
+    yabai -m window --toggle topmost;\
+    yabai -m window --toggle border;\
+    yabai -m window --toggle pip
 
 # ====== Border settings =======================
 
@@ -72,3 +72,4 @@ yabai -m rule --add label="The Unarchiver" app="^The Unarchiver$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add app="Latest" manage=off
 yabai -m rule --add app="Parallels Desktop" manage=off
+yabai -m rule --add app="Civilization VI" manage=off

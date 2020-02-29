@@ -9,3 +9,5 @@ vscode-html-languageserver-bin
 bash-language-server
 sass
 lnfs-cli
+gtop
+standard

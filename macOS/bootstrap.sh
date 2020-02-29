@@ -18,10 +18,10 @@ function packageManagers {
     sudo chown -R "$USER":admin /usr/local
     echo "Installing homebrew ..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+    
     echo "Installing cask ..."
     brew tap "homebrew/cask"
-
+    
     echo "Installing homebrew bundle"
     brew tap "homebrew/bundle"
 }
@@ -34,13 +34,13 @@ function node {
     mkdir -p ~/.npm-global
     npm install -g n
     n latest
-
+    
     apps=$(cat "/Users/gabehoban/.dotfiles/packages/node/npm.txt")
     for app in $apps; do
-        which $app > /dev/null
+        command -v "$app" > /dev/null
         if [ $? == 1 ]; then
             echo "Installing ${app}"
-            npm install -g $app
+            npm install -g "$app"
         fi
     done
 }
@@ -61,12 +61,12 @@ function pip_install {
 function ruby_gems {
     gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     curl -sSL https://get.rvm.io | bash -s stable --rails
-    source ~/.rvm/scripts/rvm
-    gems=$(cat "~/.dotfiles/packages/ruby/gems.txt")
-
+    source /Users/gabehoban/.rvm/scripts/rvm
+    gems=$(cat "$HOME"/.dotfiles/packages/ruby/gems.txt)
+    
     echo 'Installing Ruby gems'
     for gem in $gems; do
-        gem install $gem
+        gem install "$gem"
     done
 }
 
@@ -83,10 +83,10 @@ function software {
     brew bundle —-file="~/.dotfiles/packages/brew/Masfile"
     brew cleanup
     brew style
-
+    
     rm -f ~/Library/Preferences/com.apple.dock.plist
     ln -sv ~/.dotfiles/macOS/dock ~/Library/Preferences/com.apple.dock.plist
-
+    
     killall Dock
 }
 
@@ -104,9 +104,9 @@ function codeExtensions {
 # -----------------------------------------------------------------------------
 
 function defaults {
-    sudo $(pwd)/macOS/Defaults/defaults.sh
-    cp -vf $(pwd)/fonts/*.ttf ~/Library/Fonts
-    chsh -s $(which zsh)
+    sudo "$(pwd)"/macOS/Defaults/defaults.sh
+    cp -vf "$(pwd)"/fonts/*.ttf ~/Library/Fonts
+    chsh -s "$(command -v zsh)"
 }
 
 # -----------------------------------------------------------------------------
@@ -120,7 +120,7 @@ function gpg {
 # Link Files
 # -----------------------------------------------------------------------------
 function link {
-    $(pwd)/macOS/setup/links.sh
+    "$(pwd)"/macOS/setup/links.sh
 }
 
 # -----------------------------------------------------------------------------
@@ -157,9 +157,9 @@ function runAll(){
     codeExtensions
     ruby_gems
     pip_install
-    #defaults
+    defaults
     gpg
     ssh
     open
 }
-defaults
+runAll

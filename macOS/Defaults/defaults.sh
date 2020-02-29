@@ -9,5 +9,6 @@ print_in_purple "\n • Preferences\n"
 
 ./dock.sh
 ./time_machine.sh
+./transmission.sh
 ./trackpad.sh
 ./ui_and_ux.sh

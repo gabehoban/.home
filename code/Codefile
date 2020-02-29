@@ -11,15 +11,16 @@ code-insiders --install-extension christian-kohler.path-intellisense
 code-insiders --install-extension codezombiech.gitignore
 code-insiders --install-extension CoenraadS.bracket-pair-colorizer-2
 code-insiders --install-extension dbaeumer.vscode-eslint
+code-insiders --install-extension devonray.snippet
 code-insiders --install-extension dgileadi.java-decompiler
 code-insiders --install-extension dnicolson.binary-plist
 code-insiders --install-extension dnlytras.nord-wave
 code-insiders --install-extension dracula-theme.theme-dracula
 code-insiders --install-extension dunstontc.vscode-go-syntax
+code-insiders --install-extension dvlpr.dvlpr-theme
 code-insiders --install-extension eamodio.gitlens
 code-insiders --install-extension EditorConfig.EditorConfig
 code-insiders --install-extension eg2.vscode-npm-script
-code-insiders --install-extension esbenp.prettier-vscode
 code-insiders --install-extension eyhn.vscode-vibrancy
 code-insiders --install-extension formulahendry.auto-close-tag
 code-insiders --install-extension formulahendry.auto-rename-tag
@@ -30,6 +31,7 @@ code-insiders --install-extension IBM.output-colorizer
 code-insiders --install-extension ionutvmi.path-autocomplete
 code-insiders --install-extension ithildir.java-properties
 code-insiders --install-extension jasonnutter.search-node-modules
+code-insiders --install-extension jsynowiec.vscode-insertdatestring
 code-insiders --install-extension lacroixdavid1.vscode-format-context-menu
 code-insiders --install-extension leizongmin.node-module-intellisense
 code-insiders --install-extension Matsuyanagi.vscode-insert-beginning-of-line
@@ -37,6 +39,7 @@ code-insiders --install-extension mikestead.dotenv
 code-insiders --install-extension ms-vscode.Go
 code-insiders --install-extension NathanRidley.autotrim
 code-insiders --install-extension Orta.vscode-jest
+code-insiders --install-extension pawelgrzybek.gatito-theme
 code-insiders --install-extension Pivotal.vscode-concourse
 code-insiders --install-extension Pivotal.vscode-manifest-yaml
 code-insiders --install-extension Pivotal.vscode-spring-boot

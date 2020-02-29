@@ -101,3 +101,5 @@ brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 brew "zsh"
 brew "terminal-notifier"
+brew 'transmission-nightly'
+brew 'shellshock'
