@@ -1,2 +1,6 @@
 golang.org/x/lint/golint
-
+github.com/anacrolix/torrent/cmd/...
+github.com/fiatjaf/jiq
+github.com/gokcehan/lf
+github.com/pkg/errors
+github.com/jesseduffield/lazygit

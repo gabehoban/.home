@@ -1,3 +1,5 @@
+if [ -z $TMUX ]; then; tmux; fi
+
 autoload -U compinit && compinit
 gpgconf --launch gpg-agent
 
@@ -15,17 +17,24 @@ for file in ${dotfiles[@]}; do
 done
 unset file
 unset dotfiles
+unsetopt PROMPT_SP
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
-clear; lastlogin #; ufetch-macos
+
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+## Sourcing and stuff
+eval "$(pyenv init -)"
+eval "$(direnv hook zsh)"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if [ "$TMUX" = "" ]; then tmux; fi
-unsetopt PROMPT_SP
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/gabehoban/.sdkman"
+[[ -s "/Users/gabehoban/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/gabehoban/.sdkman/bin/sdkman-init.sh"

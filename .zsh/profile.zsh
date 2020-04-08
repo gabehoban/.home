@@ -6,14 +6,14 @@ export LC_ALL="en_US.UTF-8"
 export MANPAGER="less -X";
 export GREP_OPTIONS="--color=auto";
 export LESS_TERMCAP_md="${yellow}";
-export GOPATH=~/go
-export GOBIN=~/go/bin
 export LESS='-F -g -i -M -R -S -w -X -z-4'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
 . /usr/local/etc/profile.d/z.sh
 
 ## History Settings
 HIST_STAMPS="%d.%m.%y %H:%M:%S"
-HISTFILE=~/.zhistory
+HISTFILE="$HOME"/.zhistory
 setopt sharehistory
 setopt histappend
 setopt hist_ignore_space
@@ -38,10 +38,14 @@ fpath=("$HOMEBREW/share/zsh-completions" $fpath)
 fpath=("$HOMEBREW/share/zsh/site-functions" $fpath)
 
 ## Path Exports
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # GNU tools bin
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"    # Local bin
 PATH="$HOME/.bin:$PATH"                        # Home bin
-PATH="$HOME/go/bin:$PATH"                      # Golang bin
+PATH="$HOME/.rvm/bin:$PATH"                    # RVM script
+PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/marven/bin:$PATH"
+export GOPATH="$HOME/go"                       # Golang Path
+PATH="$GOPATH/bin:$PATH"                       # Golang bin
 export PATH
 
 ## Source dotfile utils
@@ -61,3 +65,9 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 export KEYID=0x643624EC29CEA355
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi

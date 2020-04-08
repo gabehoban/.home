@@ -1,38 +1,32 @@
 call plug#begin('~/.config/nvim/plugged')     
-
-" Themes
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'sainnhe/vim-color-forest-night'
-
-" Enhancements
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
-
-" Comfort
+Plug 'chrisbra/colorizer'
 Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
- 
-" Languages
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/SimpylFold'
-Plug 'sirver/ultisnips'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-
-" Syntax
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } 
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'rust-lang/rust.vim'
 Plug 'prettier/vim-prettier'
-Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-syntastic/syntastic'
-
+Plug 'godlygeek/tabular'
 call plug#end()
+
+let g:mkdp_auto_start = 1
+let g:mkdp_markdown_css = '/Users/gabehoban/Documents/md.css'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
@@ -48,8 +42,7 @@ set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 set termguicolors
-
-colo palenight
+" colo palenight
 set background=dark
 
 hi Normal guibg=NONE ctermbg=NONE
@@ -67,6 +60,8 @@ set foldenable
 set foldmethod=syntax
 set foldlevel=99
 
+let mapleader=","
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -79,6 +74,9 @@ let g:python_highlight_all=1
 
 let g:goyo_width = '80%'
 " let g:goyo_height = '90%'
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 function! s:goyo_enter()
   let b:quitting = 0
@@ -98,11 +96,17 @@ function! s:goyo_leave()
   endif
 endfunction
 
+let g:go_def_mapping_enabled = 0
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " autocmd VimEnter * Goyo 
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/coc-config.vim

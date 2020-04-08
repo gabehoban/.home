@@ -1,7 +1,6 @@
 tap "bramstein/webfonttools"
 tap "cjbassi/gotop"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
@@ -14,3 +13,6 @@ tap 'buo/cask-upgrade'
 tap 'koekeishiya/formulae'
 tap 'prbinu/touch2sudo'
 tap 'epk/epk'
+tap 'zegervdv/zathura'
+tap 'homebrew/command-not-found'
+

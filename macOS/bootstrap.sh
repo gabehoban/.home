@@ -7,7 +7,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Preparation: Install Xcode command line tools
 # -----------------------------------------------------------------------------
 function xcodeCli {
-    echo "Installing command line developer tools ..."
+    echo "Installing command line developer tools..."
     xcode-select --install
 }
 
@@ -20,10 +20,10 @@ function packageManagers {
     echo "Installing homebrew ..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    echo "Installing cask ..."
+    echo "Installing cask..."
     brew tap "homebrew/cask"
 
-    echo "Installing homebrew bundle"
+    echo "Installing homebrew bundle..."
     brew tap "homebrew/bundle"
 }
 
@@ -78,6 +78,7 @@ function ruby_gems {
 function software {
     echo "Installing software ..."
     cd ~ && git clone https://github.com/gabehoban/.dotfiles
+    mas signin --dialog macman41@me.com
     brew bundle --file="~/.dotfiles/packages/brew/Tapfile"
     brew bundle --file="~/.dotfiles/packages/brew/Brewfile"
     brew bundle --file="~/.dotfiles/packages/brew/Caskfile"

@@ -53,3 +53,17 @@ extract() {
         echo "'$1' is not a valid file"
     fi
 }
+
+bs() {
+	SELECTED_PKGS="$(brew search --formulae | fzf --header='Install packages' -m --height 100% --preview 'brew info {1}')"
+	if [ -n "$SELECTED_PKGS" ]; then
+		brew install $(echo $SELECTED_PKGS) -v
+	fi
+}
+
+bcs() {
+	SELECTED_PKGS="$(brew search --cask | fzf --header='Install applications' -m --height 100% --preview 'brew info {1}')"
+	if [ -n "$SELECTED_PKGS" ]; then
+		brew cask install $(echo $SELECTED_PKGS) -v
+	fi
+}

@@ -1,6 +1,8 @@
 #!/bin/bash
 . ~/.dotfiles/macOS/Defaults/utils.sh
 
+echo `sysctl -n hw.model` `sysctl -n machdep.cpu.brand_string`
+
 print_in_purple "\n • Preferences\n"
 
 # We need to close `System Preferences` to avoid overriding the preferences that are being changed.

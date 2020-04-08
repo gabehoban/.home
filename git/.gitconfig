@@ -3,7 +3,7 @@
 	name = Gabe Hoban
 	signingkey = 643624EC29CEA355
 [commit]
-	gpgsign = true
+	gpgsign = false
 	verbose = true
 [gpg]
 	program = gpg
@@ -12,13 +12,13 @@
 	trustctime = false
 	excludesFile = /Users/gabehoban/.gitignore_global
 [color]
-	diff = auto
 	status = auto
 	branch = auto
 	ui = true
 [alias]
 	yolo = !git add -A && git commit -m \"$(curl --silent --fail http://whatthecommit.com/index.txt)\"
 	log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+	initial = git add -A && git commit -m "initial commit" && git push origin master
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -39,7 +39,8 @@
 	prune = true
 [apply]
 	whitespace = fix
-[push]
-	default = tracking
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[pull]
+	rebase = true

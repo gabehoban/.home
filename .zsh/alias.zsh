@@ -4,7 +4,6 @@ alias mv="mv -iv"
 alias ls="ls -AGe"
 alias cat="bat "
 alias study='open -na "Brave Browser Nightly" --args --incognito "https://youtube.com/watch?v=MCkTebktHVc"'
-
 alias dots='cd "$HOME"/.dotfiles &&\
     rm -f ~/.dotfiles/code/Codefile &&\
     code-insiders --list-extensions | xargs -L 1 echo code-insiders --install-extension > ~/.dotfiles/code/Codefile &&\
@@ -21,5 +20,8 @@ alias op='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
 alias v="nvim"
 alias vi="nvim"
 alias status="git status --porcelain"
-alias check="checkstyle -c checkstyle.xml"
-alias brewup="brew upgrade && brew cask upgrade && brew cleanup"
+alias brewup="brew upgrade -v && brew cask upgrade -v && brew cleanup -v"
+alias code="code-insiders -n . &&\
+            osascript -e 'tell application "iTerm2" to set visible of front window to false'"
+alias lock="osascript -e ' tell application "Finder" to sleep'"
+alias code="code-insiders ."

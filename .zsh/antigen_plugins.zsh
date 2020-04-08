@@ -6,13 +6,12 @@ antigen bundles <<EOB
 	colored-man-pages
 	command-not-found
 	desyncr/auto-ls
-	extract
 	gem
 	git
-	heroku
-	history-substring-search
-	hlissner/zsh-autopair
 	iterm2
+	lazyload
+	MikeDacre/careful_rm
+	qoomon/zsh-lazyload
 	marzocchi/zsh-notify
 	pip
 	python
@@ -29,5 +28,6 @@ antigen bundles <<EOB
 	zsh-users/zsh-autosuggestions
 	zsh-users/zsh-history-substring-search
 	zsh-users/zsh-syntax-highlighting
+
 EOB
 antigen apply
