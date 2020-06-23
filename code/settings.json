@@ -1,8 +1,15 @@
+/*
+ * Copyright (c) 2020 Gabriel Hoban. All Rights Reserved.
+ * File: settings.json (User)
+ *
+ * Licensed under the GNU General Public License v3.0 only
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
+ */
 {
   "code-runner.runInTerminal": true,
   "editor.fontSize": 15,
-  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.formatOnType": true,
   "editor.largeFileOptimizations": false,
   "editor.minimap.enabled": false,
@@ -33,15 +40,34 @@
   "workbench.startupEditor": "newUntitledFile",
   "cSpell.userWords": [
     "Balrog",
+    "COUCHDB",
     "Cyberdeamon",
     "Cyberdemon",
+    "Datepicker",
+    "Fastify",
     "Gabe",
     "Hoban",
     "Kirki",
+    "MMDDYYYY",
+    "Probility",
     "Restrictor",
+    "Toastr",
+    "Westgate",
     "Xcode",
+    "Ypsi",
+    "addto",
+    "autoload",
+    "blipp",
+    "ciph",
     "cocoapods",
     "cout",
+    "crossorigin",
+    "datauristring",
+    "dataurl",
+    "dataurlnewwindow",
+    "dragula",
+    "echarts",
+    "formpicker",
     "gabe",
     "gabehoban",
     "gigasecond",
@@ -51,11 +77,18 @@
     "hobang",
     "homebrew",
     "iphonesimulator",
+    "jspdf",
     "keybase",
+    "makeid",
+    "minlength",
     "pipefail",
+    "queryselector",
     "scode",
     "sshman",
+    "stylelint",
     "templist",
+    "tfcoreml",
+    "uploader",
     "v",
     "xcodebuild",
     "xcpretty",
@@ -143,7 +176,7 @@
     ]
   },
   "breadcrumbs.enabled": false,
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "Andromeda Bordered",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -187,7 +220,7 @@
   "python.jediEnabled": false,
   "python.insidersChannel": "off",
   "[html]": {
-    "editor.defaultFormatter": "NikolaosGeorgiou.html-fmt-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.zoomLevel": 1,
   "go.useLanguageServer": true,
@@ -220,5 +253,123 @@
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-  "code-runner.fileDirectoryAsCwd": true
+  "code-runner.fileDirectoryAsCwd": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "psi-header.changes-tracking": {
+    "autoHeader": "autoSave",
+    "isActive": true,
+    "enforceHeader": false,
+    "modAuthor": "Modified By: ",
+    "modDate": "Last Modified: ",
+    "modDateFormat": "date",
+    "include": [],
+    "exclude": [
+      "markdown",
+      "json"
+    ],
+  },
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 0,
+    "license": "GPL-3.0",
+    "company": "Gabriel Hoban",
+  },
+  "psi-header.lang-config": [
+    {
+      "language": "lua",
+      "begin": "--[[",
+      "prefix": "--",
+      "end": "--]]",
+      "blankLinesAfter": 0
+    },
+    {
+      "language": "python",
+      "begin": "###",
+      "prefix": "# ",
+      "end": "###",
+      "blankLinesAfter": 0,
+      "beforeHeader": [
+        "#!/usr/bin/env python3",
+        "# -*- coding:utf-8 -*-"
+      ]
+    },
+    {
+      "language": "javascript",
+      "begin": "/**",
+      "prefix": " * ",
+      "end": " */",
+      "blankLinesAfter": 0,
+      "forceToTop": true
+    },
+    {
+      "language": "scss",
+      "begin": "/*",
+      "prefix": " * ",
+      "end": " */",
+      "blankLinesAfter": 0,
+      "forceToTop": true
+    },
+    {
+      "language": "html",
+      "begin": "<!--",
+      "prefix": " ~ ",
+      "end": "-->",
+      "blankLinesAfter": 0,
+      "forceToTop": true
+    },
+    {
+      "language": "typescript",
+      "mapTo": "javascript"
+    }
+  ],
+  "psi-header.templates": [
+    {
+      "language": "*",
+      "template": [
+        "Copyright (c) <<year>> <<company>>. All Rights Reserved.",
+        "",
+        "@file <<filename>> (<<projectname>>)",
+        "@license <<spdxid>> <<licensename>>",
+      ]
+    },
+    {
+      "language": "typescript",
+      "mapTo": "javascript"
+    }
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.renameOnType": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "git.confirmSync": false,
+  "git.alwaysSignOff": true,
+  "git.enableCommitSigning": true,
+  "git.enableSmartCommit": true,
+  "git.supportCancellation": true,
+  "gitmoji.autoCommit": true,
+  "gitmoji.autoClose": true,
+  "workbench.preferredDarkColorTheme": "Palenight Operator",
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "yaml.schemas": {
+    "file:///toc.schema.json": "/toc\\.yml/i"
+  },
+"angular.ngdk": "",
+"python.languageServer": "Microsoft",
 }

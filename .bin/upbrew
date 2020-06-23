@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+brew -v update && \
+brew upgrade --force-bottle && \
+brew cleanup && \
+brew cask upgrade && \
+brew prune
+
+brew bundle dump --file=~/.dotfiles/brewfile.update
+/Applications/DeltaWalker.app/Contents/MacOS/DeltaWalker ~/.dotfiles/brewfile ~/.dotfiles/brewfile.update
+rm ~/.dotfiles/brewfile.update
+
+# Push updates
+cd ~/.dotfiles
+git add brewfile
+git commit -m "Automated brew update.."
+git push origin master

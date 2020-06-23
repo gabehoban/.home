@@ -1,16 +1,14 @@
-if [ -z $TMUX ]; then; tmux; fi
+if [ -z "$TMUX" ]; then
+    tmux attach -t main || tmux new -s main
+fi
 
-autoload -U compinit && compinit
 gpgconf --launch gpg-agent
 
 ## Dotfiles
-export HOME='/Users/gabehoban'
 dotfiles=(
-    "$HOME"/.zsh/profile.zsh
-    "$HOME"/.zsh/alias.zsh
-    "$HOME"/.zsh/antigen_plugins.zsh
-    "$HOME"/.zsh/spaceship_config.zsh
-    "$HOME"/.zsh/functions.zsh
+    "$HOME"/.zsh/.zprofile
+    "$HOME"/.zsh/.zalias
+    "$HOME"/.zsh/.zfunctions
 )
 for file in ${dotfiles[@]}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
@@ -23,20 +21,14 @@ unsetopt PROMPT_SP
 autoload -U promptinit; promptinit
 prompt spaceship
 
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-
 ## Sourcing and stuff
-eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+source $(dirname $(gem which colorls))/tab_complete.sh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/gabehoban/.sdkman"
-[[ -s "/Users/gabehoban/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/gabehoban/.sdkman/bin/sdkman-init.sh"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

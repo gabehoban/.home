@@ -3,7 +3,6 @@
 	name = Gabe Hoban
 	signingkey = 6274BD5B1EA9AEBF4A6C399D643624EC29CEA355
 [commit]
-	gpgsign = true
 	verbose = true
 [gpg]
 	program = /usr/local/bin/gpg
@@ -39,11 +38,11 @@
 	prune = true
 [apply]
 	whitespace = fix
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
 [pull]
 	rebase = true
 [mergetool]
 	keepBackup = true
 [tag]
 	forceSignAnnotated = true
+[remote "origin"]
+	receivepack = git receive-pack
