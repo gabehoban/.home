@@ -116,4 +116,4 @@ cask "figma"
 
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
 mas "Xcode", id: 497799835
-
+mas "RunCat", id: 1429033973

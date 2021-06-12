@@ -1,0 +1,7 @@
+[user]
+	name = Gabe Hoban
+	email = holle_riddr@pm.me
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
