@@ -1,0 +1,27 @@
+[core]
+  excludesfile = ~/.gitignore
+  editor = code -w
+  trustctime = false
+
+[user]
+  name = Gabriel Hoban
+  email = holle_riddr@pm.me
+  signingkey = EE4B4A85
+
+[merge]
+  log = true
+
+[push]
+  default = simple
+
+[mergetool]
+  prompt = false
+
+[commit]
+  gpgsign = true
+
+[github]
+  user = gabehoban
+
+[init]
+	defaultBranch = master

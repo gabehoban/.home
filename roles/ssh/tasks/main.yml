@@ -1,0 +1,45 @@
+- name: "[SSH] Create the ssh directory"
+  file:
+    state: directory
+    path: "{{ ansible_env.HOME }}/.ssh"
+    mode: 0700
+  register: R_ssh_dir
+
+- name: "[SSH] Create the ssh sockets directory"
+  file:
+    state: directory
+    path: "{{ R_ssh_dir.path }}/sockets"
+    mode: 0700
+
+- name: "[SSH] Copy over my SSH public keys"
+  copy:
+    content: "{{
+      lookup(
+        'onepassword_raw',
+        item.value.op_name_public,
+        subdomain='my',
+        vault_password=password,
+        username=email,
+        secret_key=secret
+      ) | json_query('details.notesPlain')
+    }}"
+    dest: "{{ ansible_env.HOME }}/.ssh/{{ item.value.file_name }}.pub"
+    mode: 0600
+  loop: "{{ ssh_keys | dict2items }}"
+
+- name: "[SSH] Copy over my SSH private keys"
+  copy:
+    content: "{{
+      lookup(
+        'onepassword_raw',
+        item.value.op_name_private,
+        vault_password=password,
+        subdomain='my',
+        username=email,
+        secret_key=secret
+      ) | json_query('details.notesPlain')
+    }}"
+    dest: "{{ ansible_env.HOME }}/.ssh/{{ item.value.file_name }}"
+    mode: 0600
+  no_log: true
+  loop: "{{ ssh_keys | dict2items }}"

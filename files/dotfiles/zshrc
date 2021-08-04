@@ -1,0 +1,123 @@
+###
+### User configuration
+###
+
+# General
+setopt interactivecomments     # Comments in interactive shell
+setopt auto_cd                 # Just typing the directory name cd's into it
+setopt auto_menu               # Use menu completion after the second completion request
+setopt complete_in_word        # Only complete when completion is confirmed
+setopt correct                 # Try to autocorrect command
+setopt multios                 # Allow multiple input/output redirection
+setopt autopushd               # Makes cd, pushd (cd +1, cd -1)
+setopt prompt_subst            # Enable parameter expansion, command substitution, etc.
+setopt prompt_cr               # prompt always at beginning of line
+setopt auto_param_slash        # If a parameter is completed whose content is the name of a directory, then add a trailing slash
+setopt mail_warning            # Print a warning message if a mail file has been accessed since the shell last checked
+setopt nonomatch               # Escape URL's special chars (eg.: ?)
+setopt extended_glob
+setopt no_list_beep            # Don't beep on an ambiguous completion
+unsetopt menu_complete         # Dont insert completion results immedietly
+unsetopt beep                  # Don't beep
+unsetopt correct_all           # Don't try to autocorrect all arguments
+
+# History
+
+setopt append_history          # Append history to existing file
+setopt inc_append_history      # Append every single command to $HISTFILE immediately after hitting ENTER
+setopt extended_history        # Store timestamp and runtime
+setopt share_history           # Always import new commands from $HISTFILE
+setopt hist_expire_dups_first  # Expire duplicate history entries first
+setopt hist_ignore_dups        # Don't save entries if they are dupes of the previous event
+setopt hist_ignore_space       # If command starts with a space, don't append to history
+setopt hist_find_no_dups       # Don't cycle through dupes
+setopt hist_reduce_blanks      # Trim multiple blanks in history
+
+SAVEHIST=100000
+HISTSIZE=100000
+CASE_SENSITIVE="false"
+
+HISTFILE=~/.zsh_history
+
+###
+### General
+###
+
+# Enable colors
+autoload -U colors && colors
+
+###
+### Auto/tab-completions
+###
+
+# Enable bash completion
+autoload bashcompinit && bashcompinit
+
+# Proper case insensitivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Use proper completion
+autoload -U compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+    compinit;
+else
+    compinit -C;
+fi;
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:*:users' ignored-patterns \
+        adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+        dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+        hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+        mailman mailnull mldonkey mysql nagios \
+        named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
+        operator pcap postfix postgres privoxy pulse pvm quagga radvd \
+        rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==34=34}:${(s.:.)LS_COLORS}")';
+
+###
+### Plugins and prompt
+###
+
+# Antibody Init
+antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh
+source ~/.zsh_plugins.sh
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# JavaHOME
+if [ -d ~/.asdf ]; then
+  source ~/.asdf/plugins/java/set-java-home.zsh
+fi
+
+###
+### Aliases and functions
+###
+
+# Load aliases and functions
+if [ -r ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+fi
+
+if [ -r ~/.zsh_functions ]; then
+  source ~/.zsh_functions
+fi
+
+###
+### Key bindings
+### (To find out the actual bindings, use Ctrl+V followed by the key in a zsh shell)
+###
+
+# OS X support
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+###
+### Fixup $PATH
+###
+
+typeset -U PATH

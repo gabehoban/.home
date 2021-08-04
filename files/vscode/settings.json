@@ -1,0 +1,93 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.wordWrap": "off",
+        "editor.quickSuggestions": false
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+    "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+    "breadcrumbs.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.highlightActiveIndentGuide": false,
+    "editor.linkedEditing": true,
+    "editor.fontSize": 15,
+    "editor.minimap.maxColumn": 140,
+    "editor.renderIndentGuides": false,
+    "editor.rulers": [140],
+    "editor.suggestSelection": "first",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
+    "extensions.ignoreRecommendations": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "html.format.endWithNewline": true,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 140,
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.quoteStyle": "single",
+    "prettier.printWidth": 140,
+    "prettier.singleQuote": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    "workbench.colorCustomizations": {
+        "terminal.ansiBlue": "#01A0E4",
+        "terminal.ansiCyan": "#B5E4F4",
+    },
+    "window.newWindowDimensions": "maximized",
+    "workbench.commandPalette.history": 1000,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.tips.enabled": false,
+    "workbench.colorTheme": "Atom One Dark",
+    "window.zoomLevel": 1,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "cSpell.userWords": [
+        "Gabe",
+        "Hoban",
+        "Tweepy",
+        "deque",
+        "dotfiles",
+        "hobang",
+        "nargs",
+        "pyplot",
+        "uscoords",
+        "youtube"
+    ],
+    "git.autofetch": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "yaml.customTags": [
+        "!encrypted/pkcs1-oaep scalar",
+        "!vault scalar"
+    ],
+    "redhat.telemetry.enabled": false,
+    "explorer.confirmDelete": false,
+}

@@ -1,0 +1,132 @@
+- name: "[macOS] Run macOS defaults"
+  osx_defaults:
+    domain: "{{ item.domain }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ system_defaults }}"
+
+- name: "[macOS] Set the DNS servers"
+  block:
+    - name: Get the current DNS servers
+      command: networksetup -getdnsservers Wi-Fi
+      register: R_dns_info
+      changed_when:
+        - R_dns_info.rc != 0
+
+    - name: Set the new DNS servers
+      command: networksetup -setdnsservers Wi-Fi {{ dns_servers }}
+      register: R_dns_set
+      changed_when:
+        - ( R_dns_info.stdout | replace('\n', ' ') ) != dns_servers
+
+- name: "[macOS] Set computer name"
+  block:
+    - name: Get current computer name
+      command: scutil --get ComputerName
+      register: R_computer_name_get
+      changed_when:
+        - R_computer_name_get.stderr
+      failed_when:
+        - R_computer_name_get.rc != 0
+        - ("not set" not in R_computer_name_get.stderr)
+
+    - name: Set the computer name
+      command: scutil --set ComputerName {{ computer_name }}
+      become: true
+      become_user: root
+      register: R_computer_name_set
+      when:
+        - R_computer_name_get.stdout != computer_name
+
+- name: "[macOS] Set computer hostname"
+  block:
+    - name: Get current computer hostname
+      command: scutil --get HostName
+      register: R_computer_hostname_get
+      changed_when:
+        - R_computer_hostname_get.stderr
+      failed_when:
+        - R_computer_hostname_get.rc != 0
+        - ("not set" not in R_computer_hostname_get.stderr)
+
+    - name: Set the computer hostname
+      command: scutil --set HostName {{ computer_hostname }}
+      become: true
+      become_user: root
+      register: R_computer_hostname_set
+      when:
+        - R_computer_hostname_get.stdout != computer_hostname
+
+- name: "[macOS] Set computer local hostname"
+  block:
+    - name: Get current computer local hostname
+      command: scutil --get LocalHostName
+      register: R_computer_hostname_local_get
+      changed_when:
+        - R_computer_hostname_local_get.stderr
+      failed_when:
+        - R_computer_hostname_local_get.rc != 0
+        - ("not set" not in R_computer_hostname_local_get.stderr)
+
+    - name: Set the computer local hostname
+      command: scutil --set LocalHostName {{ computer_hostname_local }}
+      become: true
+      become_user: root
+      register: R_computer_hostname_local_set
+      when:
+        - R_computer_hostname_local_get.stdout != computer_hostname
+
+- name: "[macOS] Hosts file"
+  command: hblock
+  become: true
+  become_user: root
+
+- name: "[macOS] PYTHON: Enable plugin via asdf"
+  ansible.builtin.shell:
+    cmd: asdf plugin add python
+
+- name: "[macOS] PYTHON: Install latest python version"
+  ansible.builtin.shell:
+    cmd: asdf install python latest:3 && asdf global python latest
+
+- name: "[macOS] JAVA: Enable plugin via asdf"
+  ansible.builtin.shell:
+    cmd: asdf plugin add java
+
+- name: "[macOS] JAVA: Install openjdk-16.0.1"
+  ansible.builtin.shell:
+    cmd: asdf install java adoptopenjdk-16.0.1+9 && asdf global java adoptopenjdk-16.0.1+9
+
+- name: "[macOS] NODEJS: Enable plugin via asdf"
+  ansible.builtin.shell:
+    cmd: asdf plugin add nodejs
+
+- name: "[macOS] NODEJS: Install latest nodejs version"
+  ansible.builtin.shell:
+    cmd: asdf install nodejs latest && asdf global nodejs latest
+
+- name: "[macOS] RUBY: Enable plugin via asdf"
+  ansible.builtin.shell:
+    cmd: asdf plugin add ruby
+
+- name: "[macOS] RUBY: Install latest ruby version"
+  ansible.builtin.shell:
+    cmd: asdf install ruby latest && asdf global ruby latest
+
+- name: "[macOS] GOLANG: Enable plugin via asdf"
+  ansible.builtin.shell:
+    cmd: asdf plugin add golang
+
+- name: "[macOS] GOLANG: Install latest go version"
+  ansible.builtin.shell:
+    cmd: asdf install golang latest && asdf global golang latest
+
+- name: "[macOS] RUST: Enable plugin via asdf"
+  ansible.builtin.shell:
+    cmd: asdf plugin add rust
+
+- name: "[macOS] RUST: Install latest rust version"
+  ansible.builtin.shell:
+    cmd: asdf install rust latest && asdf global rust latest

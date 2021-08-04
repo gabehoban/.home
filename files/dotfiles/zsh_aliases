@@ -1,0 +1,45 @@
+# dotfiles alias
+alias dotfiles="~/.dotfiles/bootstrap"
+
+# Easier navigation: .., ..., ....
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Replace ls with exa
+alias ls="exa -gh -s=type --git"
+
+# Replace cat with bat
+alias cat="bat --paging=never --style=plain"
+
+# Prevent common typos
+alias cd..="cd .."
+alias sl="ls"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Enable aliases to be sudo’ed
+alias sudo="sudo "
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
+
+# Strip color codes from commands that insist on spewing them so we can
+# pipe them into files cleanly.
+alias stripcolors='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
+
+# On the rare occasions I don't want to continue an interrupted download
+# I can always delete the incomplete fragment explicitly. I usually just
+# want to complete it.
+alias wget="wget -c"
+
+# Youtube-dl
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "

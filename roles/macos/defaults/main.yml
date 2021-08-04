@@ -1,0 +1,24 @@
+computer_name: "MacBook"
+computer_hostname: "MacBook"
+computer_hostname_local: "MacBook"
+system_defaults:
+  - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: bool, value: true }
+  - { domain: com.apple.finder, key: FXEnableExtensionChangeWarning, type: bool, value: false }
+  - { domain: com.apple.finder, key: QLEnableTextSelection, type: bool, value: true }
+  - { domain: com.apple.finder, key: ShowPathbar, type: bool, value: true }
+  - { domain: com.apple.finder, key: WarnOnEmptyTrash, type: bool, value: false }
+  - { domain: com.apple.LaunchServices, key: LSQuarantine, type: bool, value: false }
+  - { domain: com.apple.screensaver, key: askForPassword, type: int, value: 1 }
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: int, value: 0 }
+  - { domain: com.apple.SoftwareUpdate, key: ScheduleFrequency, type: int, value: 1 }
+  - { domain: NSGlobalDomain, key: ApplePressAndHoldEnabled, type: bool, value: false }
+  - { domain: NSGlobalDomain, key: AppleShowAllExtensions, type: bool, value: true }
+  - { domain: NSGlobalDomain, key: com.apple.mouse.tapBehavior, type: int, value: 1 }
+  - { domain: NSGlobalDomain, key: InitialKeyRepeat, type: integer, value: 15 }
+  - { domain: NSGlobalDomain, key: KeyRepeat, type: integer, value: 2 }
+  - { domain: NSGlobalDomain, key: NSAutomaticDashSubstitutionEnabled, type: bool, value: false }
+  - { domain: NSGlobalDomain, key: NSAutomaticQuoteSubstitutionEnabled, type: bool, value: false }
+  - { domain: NSGlobalDomain, key: NSAutomaticSpellingCorrectionEnabled, type: bool, value: false }
+  - { domain: NSGlobalDomain, key: NSDisableAutomaticTermination, type: bool, value: true }
+  - { domain: NSGlobalDomain, key: NSDocumentSaveNewDocumentsToCloud, type: bool, value: false }
+  - { domain: NSGlobalDomain, key: NSTextShowsControlCharacters, type: bool, value: true }

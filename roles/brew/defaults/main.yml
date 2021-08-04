@@ -1,0 +1,91 @@
+brew_taps:
+  - homebrew/autoupdate
+  - homebrew/bundle
+  - homebrew/cask
+  - homebrew/cask-drivers
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
+  - homebrew/core
+  - homebrew/services
+
+brew_packages:
+  - ansible
+  - antibody
+  - asciinema
+  - asdf
+  - bash
+  - bat
+  - bzip2
+  - composer
+  - coreutils
+  - exa
+  - expect
+  - ffmpeg
+  - fzf
+  - gawk
+  - git
+  - gpg2
+  - hblock
+  - hexyl
+  - htop
+  - jq
+  - libiconv
+  - libzip
+  - mas
+  - media-info
+  - mono
+  - nmap
+  - oath-toolkit
+  - pinentry-mac
+  - showkey
+  - swiftformat
+  - sqlite
+  - telnet
+  - terminal-notifier
+  - wget
+  - youtube-dl
+  - zlib
+  - zsh
+
+cask_packages:
+  - 1password-cli
+  - alfred
+  - alt-tab
+  - brooklyn
+  - discord
+  - dropbox
+  - figma
+  - firefox-developer-edition
+  - font-fira-code-nerd-font
+  - font-hack-nerd-font
+  - font-inconsolata-nerd-font
+  - font-jetbrains-mono-nerd-font
+  - font-meslo-lg-nerd-font
+  - gpg-suite
+  - hyper
+  - iina
+  - keka
+  - macdown
+  - spotify
+  - swiftformat-for-xcode
+  - tiles
+  - tunnelblick
+  - visual-studio-code-insiders
+  - wireshark
+
+cask_ql_packages:
+  - provisionql
+  - qlcolorcode
+  - qlimagesize
+  - qlmarkdown
+  - qlprettypatch
+  - qlstephen
+  - qlvideo
+  - quicklook-csv
+  - quicklook-json
+  - suspicious-package
+  - webpquicklook
+
+apps:
+  - id: 1429033973
+    name: RunCat

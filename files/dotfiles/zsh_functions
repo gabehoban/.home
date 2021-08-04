@@ -1,0 +1,162 @@
+#!/bin/zsh
+#
+# Only including a shebang to trigger editors shell syntax highlighting
+#
+# Copyright 2021 Gabriel Hoban (gabehoban)
+#
+# MIT licensed, see LICENSE.txt
+#
+# If you want to customize these, the best thing to do is override them
+# with a shell fragment in ~/.zshrc.d, then you don't have to maintain
+# your own fork of the quickstart kit
+
+
+function steep() {
+    BREWFILE="$HOME"/Dropbox/Brewfile.config
+    brew update
+    brew upgrade
+    brew upgrade --cask
+    brew cleanup
+    rm -rdf $BREWFILE
+    brew bundle dump --file $BREWFILE
+    unset BREWFILE
+}
+
+function envgrep() {
+  printenv | grep -i "$@"
+}
+
+function man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
+}
+
+function watch() { t=$1; shift; while test :; do clear; date=$(date); echo -e "Every $ts: $@ \t\t\t\t $date"; $@; sleep $t; done }
+
+# Probe a /24 for hosts
+function scan24() {
+  nmap -sP ${1}/24
+}
+
+# Netjoin - Block until a network connection is obtained.
+function nj() {
+  while true; do
+    ping -c 1 8.8.8.8 &> /dev/null && break
+    sleep 1
+  done
+}
+
+# 1Password Functions
+function opinit() {
+    # test for stale session
+    if [ ! -r $HOME/.local/1pass/_session.gpg ] || [ ! "$(find $HOME/.local/1pass/_session.gpg -mmin -29)" ]; then
+        opon
+    fi
+    export token=$(gpg -d -q $HOME/.local/1pass/_session.gpg)
+    touch $HOME/.local/1pass/_session.gpg
+}
+
+function opon() {
+  email=""
+  self_key=""
+  domain=""
+  source $HOME/.local/1pass/config
+
+  ## Retreive Password
+  local pw
+  pw=$(gpg -d -q $HOME/.local/1pass/_master.gpg)
+
+  ## Retreive Master Key
+  local se
+  se=$(gpg -d -q $HOME/.local/1pass/_secret.gpg)
+
+  ## Login Script
+        script="
+            spawn op signin ${domain} ${email} ${se}
+            expect \"${domain}:\"
+            send \"${pw}\n\"
+            expect {
+                   \"Enter your six-digit authentication code:\" {
+                           puts -nonewline stderr \"Enter your six-digit authentication code: \"
+                           flush stderr
+                           interact -o \"\r\" return
+                           puts stderr \"\"
+                           exp_continue
+                   }
+                   eof
+            }
+        "
+  local output0
+  output0=$(expect -c "${script}")
+  local output
+  output=$(echo "$output0" | grep "export" || echo -n "_fail_")
+
+  local token
+  token=$(expr "$output" : '.*="\(.*\)"')
+  echo -n "$token" | gpg -qe --batch -r "$self_key" > $HOME/.local/1pass/_session.gpg
+}
+
+function opoff() {
+    domain=""
+    source $HOME/.local/1pass/config
+    OP_SESSION_NAME=$(echo "$domain" | cut -f1 -d'.' | tr '-' '_')
+    unset token
+    unset "$OP_SESSION_NAME"
+    rm -f $HOME/.local/1pass/_session.gpg
+    gpgconf --kill gpg-agent
+}
+
+function getpwd() {
+  opinit
+  local result
+  op get item "$1" --session $token | jq -r '.details.fields[] |select(.designation=="password").value' | pbcopy
+
+  # sleep and reset clipboard
+  local sleep_argv0
+  sleep_argv0="1pass sleep for user $(id -u)"
+  pkill -f "^$sleep_argv0" 2>/dev/null && sleep 0.5
+  (
+      ( exec -a "$sleep_argv0" sleep 30 )
+      echo -n "" | pbcopy
+  ) 2>/dev/null & disown
+  opoff
+}
+
+function getmfa() {
+  opinit
+  op get totp "$1" --session $token
+  opoff
+}
+
+# Extractor
+function ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}

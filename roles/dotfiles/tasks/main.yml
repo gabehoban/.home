@@ -1,0 +1,14 @@
+- name: "[DOTFILES] Get list of files to symlink"
+  shell: "ls -1 ~/.dotfiles/files/dotfiles  > /tmp/dotfiles_symlinks_to_build"
+
+- name: "[DOTFILES] Store list of files into variable"
+  shell: "cat /tmp/dotfiles_symlinks_to_build"
+  register: filesToSymlink
+
+- name: "[DOTFILES] Set symlinks"
+  file:
+    src: '{{ ansible_env.PWD }}/files/dotfiles/{{ item }}'
+    path: '~/.{{ item }}'
+    state: link
+  with_items:
+    - "{{filesToSymlink.stdout_lines}}"

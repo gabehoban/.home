@@ -1,0 +1,16 @@
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+unixorn/tumult.plugin.zsh
+supercrabtree/k
+ohmyzsh/ohmyzsh path:plugins/sudo
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/brew
+ohmyzsh/ohmyzsh path:plugins/osx
+ohmyzsh/ohmyzsh path:plugins/fzf
+ohmyzsh/ohmyzsh path:plugins/asdf
+denysdovhan/spaceship-prompt
+lukechilds/zsh-nvm
+mroth/evalcache
+wfxr/forgit
